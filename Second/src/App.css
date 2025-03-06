@@ -1,0 +1,27 @@
+.head{
+  background-color:red;
+}
+.nav{
+  display:flex;
+  background-color:"aliceblue";
+  border:1px solid black;
+  justify-content:space-between
+}
+
+.right>ul{
+  list-style-type:none;
+  display:flex;
+}
+.right>ul>li{
+  margin-right:20px;
+}
+
+.card{
+  height:350px;
+  width:250px;
+  border:1px solid grey;
+  padding:5px;
+}
+.restaurants{
+  display:flex;
+}
