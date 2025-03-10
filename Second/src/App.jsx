@@ -28,17 +28,28 @@ function App(){
     ]
     
    
+   
     return (
       
         <>
         <Header/>
         <div className="restaurants">
+{/* {console.log("hello")} */}
+{
+    resturant_array.map((obj,i)=>{
+        return(
+            <Section data={obj} key={i}/>
+        )
 
-      <Section data={resturant_array[0]}/>
+    })
+}
+      {/* <Section data={resturant_array[0]}/>
       <Section data={resturant_array[1]}/>
-      <Section data={resturant_array[2]}/>
+      <Section data={resturant_array[2]}/> */}
+
+
         </div>
-      {/* {Section()} */}
+      
       {/* <Section/>
       <Section/> */}
        <Footer/>
@@ -47,4 +58,6 @@ function App(){
     )
 
 }
+
+
 export default App;
