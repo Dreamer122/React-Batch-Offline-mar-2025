@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 export function Header(){
-    console.log("Header component")
+    // console.log("Header component")
     // let name="React js"
             const [name,setName]= useState("react+vite")
 //    function changename(){

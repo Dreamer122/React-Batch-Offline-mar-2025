@@ -1,5 +1,5 @@
 export const Section=(props)=>{ 
-    console.log("section compo")
+    // console.log("section compo")
     const {data}=props
     // console.log(data)
     const {cuisine,image,restaurant_name}=data   

@@ -1,63 +1,52 @@
-//  components 
-// import { Fragment } from "react";
-import React, { Fragment } from "react";
+//  components
+import React, {useState} from "react";
 import { Header } from "./Components/Header";
-import Footer from "./Components/Footer"
-import "./App.css"
+import Footer from "./Components/Footer";
+import "./App.css";
 import { Section } from "./Components/Section";
+import { resturant_array } from "./Components/Data";
+import { Searchbar } from "./Components/Searchbar";
 
-function App(){
-    let resturant_array=[
-        {
-            restaurant_name:"Burger king",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTFhHUwuJmJ7CrqWgpY7BmhFpRUtjzOb3_2w&s",
-            cuisine:"Burger"
-        },
-        {
-            restaurant_name:"Dakshin",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScsUSK0Cz3yHBYbZNvM6OmZJCwzORgboHqlQ&s",
-            cuisine:"South India"
-
-        }
-        ,
-        {
-            restaurant_name:"Pizza hut",
-            image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/RX_THUMBNAIL/IMAGES/VENDOR/2024/12/29/29e46475-55d5-4a18-a901-3c14fdd5ba79_1012175.jpg",
-            cuisine:"Italian"
-        }
-    ]
+function App() {
+        const [searchText,setSearchText]=useState("");
+        const [filterData,setFilterData]=useState(resturant_array)
+        // const filteredResturant = resturant_array.filter((resturant) => {
     
-   
-   
-    return (
-      
-        <>
-        <Header/>
-        <div className="restaurants">
-{/* {console.log("hello")} */}
-{
-    resturant_array.map((obj,i)=>{
-        return(
-            <Section data={obj} key={i}/>
-        )
+        function getValue(e){
+            // console.log(e.target.value)
+            setSearchText(e.target.value)
+            console.log(searchText)
+    
+        }
 
-    })
-}
-      {/* <Section data={resturant_array[0]}/>
-      <Section data={resturant_array[1]}/>
-      <Section data={resturant_array[2]}/> */}
+        const searchData=()=>{
+            const filterRestaurant=resturant_array.filter((res)=>{
+                return( res.restaurant_name.includes(searchText))
+            })
+            console.log("filterRestaurant",filterRestaurant)
+            setFilterData(filterRestaurant)
+        }
+    
+  return (
+    <>
+      <Header />
+      <div>
+        <h2>Restaurant List</h2>
+      {/* <Searchbar/> */}
 
+      <div>
+    <input type="text" onChange={getValue}  value={searchText} /> <button onClick={searchData}>search</button>
+   </div>
+      </div>
+      <div className="restaurants">
+        {filterData.map((obj, i) => {
+          return <Section data={obj} key={i} />;
+        })}
+      </div>
 
-        </div>
-      
-      {/* <Section/>
-      <Section/> */}
-       <Footer/>
-     
+      <Footer />
     </>
-    )
-
+  );
 }
-
 
 export default App;
