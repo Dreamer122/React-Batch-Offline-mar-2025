@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 
 
-export const Searchbar = () => {
+export const Searchbar = ({searchData}) => {
+  // console.log(props)
     const [searchText,setSearchText]=useState();
     function getValue(e){
         // console.log(e.target.value)
@@ -13,8 +14,10 @@ export const Searchbar = () => {
   return (
    <>
    <div>
-    <input type="text" onChange={getValue}  value={searchText} /> <button>search</button>
+    <input type="text" onChange={getValue}  value={searchText} /> <button onClick={()=>searchData(searchText)}>search</button>
    </div>
    </>
   )
 }
+
+
