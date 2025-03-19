@@ -1,13 +1,9 @@
 import React, { useState } from "react"
-
+import { NavLink ,Link} from "react-router-dom"
 export function Header(){
-    // console.log("Header component")
-    // let name="React js"
+   
             const [name,setName]= useState("react+vite")
-//    function changename(){
-//     // name="react+vite"
-//     setName("react + vite")
-//    }
+
 
     return(
         <div className="nav">
@@ -16,10 +12,11 @@ export function Header(){
            </div>
 <div className="right">
     <ul>
-        <li>home</li>
-        <li>about</li>
-        <li>contact</li>
-        <li>blog</li>
+        <li><NavLink to={"/"}>Home</NavLink></li>
+        <li> <NavLink to={"/about"}>about</NavLink></li>
+        <li> <NavLink to={"/contact"}>contact</NavLink></li>
+        <li> <NavLink to={"/Blog"}>blogs</NavLink></li>
+        
         {/* <li> <button onClick={changename}>click me</button></li> */}
         <li> <button onClick={()=>{setName("reactjs")}}>click me</button></li>
     </ul>
