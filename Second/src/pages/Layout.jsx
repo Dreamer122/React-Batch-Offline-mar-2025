@@ -20,7 +20,7 @@ export const Layout = () => {
   <Route path="/about" element={<About/>} />
   <Route path="/contact" element={<Contact/>} />
   <Route path="/blog" element={<Blogs/>} />
-<Route path='/products/:id' element={<ProductDesc/>}></Route>
+<Route path='/products/:id/:title' element={<ProductDesc/>}></Route>
 
   {/* <Route path="/*" element={<Errorpage/>} /> */}
   <Route path="/*" element={<Navigate to={"/"}/>} />

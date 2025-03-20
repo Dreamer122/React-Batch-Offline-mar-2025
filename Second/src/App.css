@@ -27,3 +27,12 @@
   flex-wrap:wrap;
   justify-content:space-around;
 }
+/*  product desc css */
+.images_size{
+  width:100px;
+  height:100px;
+}
+.left_desc{
+  width:60%;
+  border:1px solid black;
+}

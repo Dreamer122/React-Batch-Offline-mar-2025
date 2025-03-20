@@ -490,82 +490,6 @@
 			"typeName": "shape"
 		},
 		{
-			"id": "pointer:pointer",
-			"typeName": "pointer",
-			"x": -743.9912206734249,
-			"y": 1089.027248488415,
-			"lastActivityTimestamp": 1742368198021,
-			"meta": {}
-		},
-		{
-			"followingUserId": null,
-			"opacityForNextShape": 1,
-			"stylesForNextShape": {},
-			"brush": null,
-			"scribbles": [],
-			"cursor": {
-				"type": "default",
-				"rotation": 0
-			},
-			"isFocusMode": false,
-			"exportBackground": true,
-			"isDebugMode": false,
-			"isToolLocked": false,
-			"screenBounds": {
-				"x": 0,
-				"y": 0,
-				"w": 729.861083984375,
-				"h": 386.111083984375
-			},
-			"insets": [
-				false,
-				false,
-				true,
-				false
-			],
-			"zoomBrush": null,
-			"isGridMode": false,
-			"isPenMode": false,
-			"chatMessage": "",
-			"isChatting": false,
-			"highlightedUserIds": [],
-			"isFocused": true,
-			"devicePixelRatio": 1.440000057220459,
-			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
-			"openMenus": [],
-			"isChangingStyle": false,
-			"isReadonly": false,
-			"meta": {},
-			"duplicateProps": null,
-			"id": "instance:instance",
-			"currentPageId": "page:page",
-			"typeName": "instance"
-		},
-		{
-			"editingShapeId": "shape:oM15_KY0S-qrwH35J0pUw",
-			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:oM15_KY0S-qrwH35J0pUw"
-			],
-			"hoveredShapeId": "shape:oM15_KY0S-qrwH35J0pUw",
-			"erasingShapeIds": [],
-			"hintingShapeIds": [],
-			"focusedGroupId": null,
-			"meta": {},
-			"id": "instance_page_state:page:page",
-			"pageId": "page:page",
-			"typeName": "instance_page_state"
-		},
-		{
-			"x": 788.3181339365284,
-			"y": -963.4919131051146,
-			"z": 0.6281258540102113,
-			"meta": {},
-			"id": "camera:page:page",
-			"typeName": "camera"
-		},
-		{
 			"x": -743.9912206734249,
 			"y": 1072.827161894787,
 			"rotation": 0,
@@ -614,6 +538,370 @@
 			},
 			"parentId": "page:page",
 			"index": "a53sV",
+			"typeName": "shape"
+		},
+		{
+			"id": "pointer:pointer",
+			"typeName": "pointer",
+			"x": -379.68165158607667,
+			"y": 1903.3623572049182,
+			"lastActivityTimestamp": 1742454954706,
+			"meta": {}
+		},
+		{
+			"followingUserId": null,
+			"opacityForNextShape": 1,
+			"stylesForNextShape": {
+				"tldraw:size": "l"
+			},
+			"brush": null,
+			"scribbles": [],
+			"cursor": {
+				"type": "default",
+				"rotation": 0
+			},
+			"isFocusMode": false,
+			"exportBackground": true,
+			"isDebugMode": false,
+			"isToolLocked": false,
+			"screenBounds": {
+				"x": 0,
+				"y": 0,
+				"w": 899.9999389648438,
+				"h": 386.111083984375
+			},
+			"insets": [
+				false,
+				false,
+				true,
+				false
+			],
+			"zoomBrush": null,
+			"isGridMode": false,
+			"isPenMode": false,
+			"chatMessage": "",
+			"isChatting": false,
+			"highlightedUserIds": [],
+			"isFocused": true,
+			"devicePixelRatio": 1.440000057220459,
+			"isCoarsePointer": false,
+			"isHoveringCanvas": true,
+			"openMenus": [],
+			"isChangingStyle": false,
+			"isReadonly": false,
+			"meta": {},
+			"duplicateProps": null,
+			"id": "instance:instance",
+			"currentPageId": "page:page",
+			"typeName": "instance"
+		},
+		{
+			"editingShapeId": "shape:28QsJxgtF9ZwTDvqIkexR",
+			"croppingShapeId": null,
+			"selectedShapeIds": [
+				"shape:28QsJxgtF9ZwTDvqIkexR"
+			],
+			"hoveredShapeId": null,
+			"erasingShapeIds": [],
+			"hintingShapeIds": [],
+			"focusedGroupId": null,
+			"meta": {},
+			"id": "instance_page_state:page:page",
+			"pageId": "page:page",
+			"typeName": "instance_page_state"
+		},
+		{
+			"x": 910.389551352036,
+			"y": -1305.2953778532794,
+			"z": 0.48991168232969445,
+			"meta": {},
+			"id": "camera:page:page",
+			"typeName": "camera"
+		},
+		{
+			"x": -778.4301856013376,
+			"y": 1210.8959909305618,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:28QsJxgtF9ZwTDvqIkexR",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "l",
+				"w": 1387.6861572265625,
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1,
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							},
+							"content": [
+								{
+									"type": "text",
+									"text": "dynamic routing"
+								}
+							]
+						},
+						{
+							"type": "paragraph",
+							"attrs": {
+								"dir": "auto"
+							}
+						},
+						{
+							"type": "orderedList",
+							"attrs": {
+								"start": 1
+							},
+							"content": [
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "layout "
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "define route"
+												}
+											]
+										},
+										{
+											"type": "orderedList",
+											"attrs": {
+												"start": 1
+											},
+											"content": [
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "<route path=\"/products/:id\" element={<product/>}/>"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": " go to links page (cards)"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "<link to="
+																},
+																{
+																	"type": "text",
+																	"marks": [
+																		{
+																			"type": "code"
+																		}
+																	],
+																	"text": "products/${obj.id}`"
+																},
+																{
+																	"type": "text",
+																	"text": "/>"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": " url -> browser -> products/1 ---- page-> prod_desc"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "to get data from url we use  a hook called (use Params)--- react router"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "get (id ) from url "
+												}
+											]
+										},
+										{
+											"type": "orderedList",
+											"attrs": {
+												"start": 1
+											},
+											"content": [
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "param=useParams() ---  this give me a object {id:1}"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "hit the api  with id  (useEffect)"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "store data into state"
+																}
+															]
+														}
+													]
+												},
+												{
+													"type": "listItem",
+													"content": [
+														{
+															"type": "paragraph",
+															"attrs": {
+																"dir": "auto"
+															},
+															"content": [
+																{
+																	"type": "text",
+																	"text": "populate data into ui"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			"parentId": "page:page",
+			"index": "a68xa",
 			"typeName": "shape"
 		}
 	]

@@ -54,7 +54,7 @@ const  callApi= async ()=>{
         (filterData.length==0)?<Loader/>:
         filterData?.map((obj, i) => {
           // return <Link  key={obj.id} to={`/products/${obj.title.split(" ").join("-")}`}> <Section data={obj} /> </Link>;
-          return <Link  key={obj.id} to={`/products/${obj.id}`}> <Section data={obj} /> </Link>;
+          return <Link  key={obj.id} to={`/products/${obj.id}/${obj.title}`}> <Section data={obj} /> </Link>;
         })}
       </div>
 

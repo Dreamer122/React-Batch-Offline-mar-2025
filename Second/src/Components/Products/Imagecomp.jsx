@@ -2,14 +2,14 @@ import React from 'react'
 
 export const Imagecomp = (props) => {
   return (
-    <div className='imagebar'>
+    <div className='imagebar' style={{display:"flex"}}>
         <div className='products_images'>
             {
 
-    props.imageArray.map(()=>{
+    props.images?.map((url,i)=>{
         return (
-            <div key={} className="">
-           <img src={} alt="" />
+            <div key={i} className="">
+           <img src={url} alt="image"  className='images_size'/>
             </div>
         )
     })
@@ -17,7 +17,7 @@ export const Imagecomp = (props) => {
 
         </div>
         <div className='thumbnail_image'>
-            <img src={} alt="" />
+            <img src={props.thumbnail} alt="" className='images_size' />
 
         </div>
 
