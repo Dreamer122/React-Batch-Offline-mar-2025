@@ -13,7 +13,7 @@ export const ProductDesc = () => {
     const [singledata,setSingleData]=useState({})
 
 async function getsingledata(){
-  const response = await fetch(`https://dummyjson.com/products/${id}`)
+  const response = await fetch(`https://fakestoreapi.com/products/${id}`)
   const data=await response.json()
   console.log(data)
   setSingleData(data)
@@ -27,9 +27,10 @@ useEffect(()=>{
   return (
     <div style={{display:"flex"}}>
         <div className="left_desc">
-<Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/>
+{/* <Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/> */}
+{/* <Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/> */}
    
-    
+    <img src={singledata.image} alt=""  style={{height:"300px"}}/>
 
         </div>
 
@@ -38,7 +39,7 @@ useEffect(()=>{
 <h3>{singledata.title}</h3>
 <p>{singledata.description}</p>
 <p>{singledata.price}</p>
-<p>{singledata.rating}</p>
+{/* <p>{singledata.rating}</p> */}
 </div>
     </div>
   )

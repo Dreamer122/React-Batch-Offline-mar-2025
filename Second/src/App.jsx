@@ -25,17 +25,22 @@ function App() {
 
 const  callApi= async ()=>{
     // const resp=await fetch("https://fakestoreapi.com/products");
-    const resp=await fetch("https://dummyjson.com/products");
+    const resp=await fetch("https://fakestoreapi.com/products");
     const data1=await resp.json()
-    const data=data1.products
-    setProducts(data)
-    setFilterData(data)
+  
+    console.log(data1)
+    setProducts(data1)
+    setFilterData(data1)
     // console.log("data",data)
 }
 
         useEffect(()=>{
+         
+          // document.title="Home"
+            
           callApi()
           console.log("useEffect")
+
         },[])
     
         // console.log("after useeffect")
@@ -51,10 +56,10 @@ const  callApi= async ()=>{
       </div>
       <div className="restaurants">
         {
-        (filterData.length==0)?<Loader/>:
+        (filterData?.length==0)?<Loader/>:
         filterData?.map((obj, i) => {
           // return <Link  key={obj.id} to={`/products/${obj.title.split(" ").join("-")}`}> <Section data={obj} /> </Link>;
-          return <Link  key={obj.id} to={`/products/${obj.id}/${obj.title}`}> <Section data={obj} /> </Link>;
+          return <Link  style={{textDecoration:"none"}} key={obj.id} to={`/products/${obj.id}/${obj.title}`}> <Section data={obj} /> </Link>;
         })}
       </div>
 

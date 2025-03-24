@@ -50,3 +50,11 @@ export let resturant_array=[
           
           
     ]
+
+  // titles 
+ export const titles={
+    "/":"HOME-PAGE",
+    "/about":"About Us",
+    "/contact":"Contact Us",
+    "/Blog":"Blogs"
+  }

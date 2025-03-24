@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import { About } from "./About";
@@ -9,21 +9,47 @@ import { Blogs } from './Blogs';
 import App from '../App';
 import { Errorpage } from './Errorpage';
 import { ProductDesc } from './ProductDesc';
+import { titles } from '../Components/Data';
+import { useLocation } from 'react-router-dom';
+
+const DynamicTitles=()=>{
+  const location=useLocation();
+  console.log(location.pathname)
+
+  useEffect(()=>{
+    document.title=titles[location.pathname]
+  },[location.pathname])
+
+return null
+
+}
+
+
 export const Layout = () => {
+
   return (
     <>
     <BrowserRouter>
+    <DynamicTitles/>
     <Header />
 
 <Routes>
   <Route path="/" element={<App/>}></Route>
   <Route path="/about" element={<About/>} />
   <Route path="/contact" element={<Contact/>} />
-  <Route path="/blog" element={<Blogs/>} />
+  <Route path="blog" element={<Blogs/>} >  
+  {/* 
+  /blog/womenFashion
+  */}
+    <Route  index element={<h1>Women Fashion blog</h1>}/>
+    <Route path='MenFashion' element={<h1>Men Fashion blog</h1>}/>
+    <Route path='KidsFashion' element={<h1>kids Fashion blog</h1>}/>
+
+  </Route>
 <Route path='/products/:id/:title' element={<ProductDesc/>}></Route>
 
-  {/* <Route path="/*" element={<Errorpage/>} /> */}
-  <Route path="/*" element={<Navigate to={"/"}/>} />
+  <Route path="/*" element={<Errorpage/>} />
+  {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}
   
 
 </Routes>
