@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 
+import { searchData } from '../util/helper';
 
-export const Searchbar = ({searchData}) => {
+export const Searchbar = ({products,setFilterData}) => {
   console.log("searchbar comp")
     const [searchText,setSearchText]=useState("");
     function getValue(e){
@@ -14,8 +15,11 @@ export const Searchbar = ({searchData}) => {
 
   return (
    <>
-   <div>
-    <input type="text" onChange={getValue}  value={searchText} /> <button onClick={()=>searchData(searchText)}>search</button>
+   <div className='py-5 bg-violet-400 px-2 rounded-md text-center w-1/2 mx-auto my-5'>
+    <input type="text" onChange={getValue}  value={searchText} className='bg-white border border-gray-400 h-8 md:w-80 mr-3' />
+     <button onClick={()=>{
+ setFilterData(searchData(products,searchText))
+      }} className='bg-violet-800 text-white py-3 px-4 rounded-lg'>search</button>
    </div>
    </>
   )

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, {lazy,Suspense ,useEffect } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
-import { About } from "./About";
+// import  About  from "./About";
 import { Contact } from "./Contact";
 import { Header } from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -11,6 +11,8 @@ import { Errorpage } from './Errorpage';
 import { ProductDesc } from './ProductDesc';
 import { titles } from '../Components/Data';
 import { useLocation } from 'react-router-dom';
+
+const About=lazy(()=>import("../pages/About"))
 
 const DynamicTitles=()=>{
   const location=useLocation();
@@ -35,7 +37,10 @@ export const Layout = () => {
 
 <Routes>
   <Route path="/" element={<App/>}></Route>
-  <Route path="/about" element={<About/>} />
+  
+
+  <Route path="/about" element={<Suspense fallback={<h1>loading....</h1>}> <About/> </Suspense>}/>
+ 
   <Route path="/contact" element={<Contact/>} />
   <Route path="blog" element={<Blogs/>} >  
   {/* 

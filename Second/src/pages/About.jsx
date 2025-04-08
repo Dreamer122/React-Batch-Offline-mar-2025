@@ -1,11 +1,23 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from "react";
 
-export const About = () => {
+ const About = () => {
   // useEffect(()=>{
   //   document.title="About"
   // },[])
 
+  /*
+
+  on demand loading 
+  lazy loading
+  code splitting
+  chunking
+
+  */
+
   return (
-    <div>About</div>
-  )
-}
+    <>
+     <p> about us Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, architecto!</p>
+    </>
+  );
+};
+export default About

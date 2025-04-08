@@ -5,7 +5,7 @@ export const Sidebar = () => {
   return (
     <>
     <div>
-        <ul>
+        <ul className='text-3xl'>
             <li>
                 <Link to={""}>Women Fashion</Link>
             </li>

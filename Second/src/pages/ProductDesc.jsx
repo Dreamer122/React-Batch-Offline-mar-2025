@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import  { Imagecomp } from "../Components/Products/Imagecomp"
 
+import useCallApi from '../util/useCallApi'
 export const ProductDesc = () => {
     const param=useParams()
 
@@ -10,19 +11,7 @@ export const ProductDesc = () => {
     // console.log(params.id)
     // call api with id 1
 
-    const [singledata,setSingleData]=useState({})
-
-async function getsingledata(){
-  const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-  const data=await response.json()
-  console.log(data)
-  setSingleData(data)
-
-}
-
-useEffect(()=>{
-  getsingledata()
-},[])
+  const singledata=useCallApi(`https://fakestoreapi.com/products/${id}`)
 
   return (
     <div style={{display:"flex"}}>
@@ -30,15 +19,15 @@ useEffect(()=>{
 {/* <Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/> */}
 {/* <Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/> */}
    
-    <img src={singledata.image} alt=""  style={{height:"300px"}}/>
+    <img src={singledata?.image} alt=""  style={{height:"300px"}}/>
 
         </div>
 
 <div className="right">
 
-<h3>{singledata.title}</h3>
-<p>{singledata.description}</p>
-<p>{singledata.price}</p>
+<h3>{singledata?.title}</h3>
+<p>{singledata?.description}</p>
+<p>{singledata?.price}</p>
 {/* <p>{singledata.rating}</p> */}
 </div>
     </div>
