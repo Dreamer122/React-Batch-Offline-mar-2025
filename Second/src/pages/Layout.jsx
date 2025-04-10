@@ -13,6 +13,7 @@ import { titles } from '../Components/Data';
 import { useLocation } from 'react-router-dom';
 
 const About=lazy(()=>import("../pages/About"))
+import { SignupForm } from './SignupForm';
 
 const DynamicTitles=()=>{
   const location=useLocation();
@@ -52,6 +53,8 @@ export const Layout = () => {
 
   </Route>
 <Route path='/products/:id/:title' element={<ProductDesc/>}></Route>
+
+<Route path='/signup' element={<SignupForm/>}/>
 
   <Route path="/*" element={<Errorpage/>} />
   {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}
