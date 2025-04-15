@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import  { Imagecomp } from "../Components/Products/Imagecomp"
+// import  { Imagecomp } from "../Components/Products/Imagecomp"
+import { AccordionWrapper } from '../Components/Accordion/AccordionWrapper'
 
 import useCallApi from '../util/useCallApi'
 export const ProductDesc = () => {
@@ -14,6 +15,7 @@ export const ProductDesc = () => {
   const singledata=useCallApi(`https://fakestoreapi.com/products/${id}`)
 
   return (
+    <>
     <div style={{display:"flex"}}>
         <div className="left_desc">
 {/* <Imagecomp images={singledata.images} thumbnail={singledata.thumbnail}/> */}
@@ -31,5 +33,11 @@ export const ProductDesc = () => {
 {/* <p>{singledata.rating}</p> */}
 </div>
     </div>
+
+    <div className='m-auto w-1/2 border'>
+      <h2 className='text-center text-2xl'>FAQ</h2>
+      <AccordionWrapper />
+    </div>
+    </>
   )
 }

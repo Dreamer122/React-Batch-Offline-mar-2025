@@ -33,6 +33,7 @@ export function Header(){
         <li> <NavLink to={"/contact"}>contact</NavLink></li>
         <li> <NavLink to={"/blog"}>blogs</NavLink></li>
         <li> <NavLink to={"/signup"}>signup</NavLink></li>
+        <li> <NavLink to={"/login"}>login</NavLink></li>
         
         {/* <li> <button onClick={changename}>click me</button></li> */}
         {/* <li> <button onClick={()=>{setName("reactjs")}}>click me</button></li> */}
