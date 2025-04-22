@@ -11,10 +11,12 @@ import { Errorpage } from './Errorpage';
 import { ProductDesc } from './ProductDesc';
 import { titles } from '../Components/Data';
 import { useLocation } from 'react-router-dom';
+import { Cart } from './Cart';
 
 const About=lazy(()=>import("../pages/About"))
 import { SignupForm } from './SignupForm';
 import { Login } from './Login';
+import { Toaster } from 'react-hot-toast';
 
 const DynamicTitles=()=>{
   const location=useLocation();
@@ -61,9 +63,10 @@ export const Layout = () => {
   <Route path="/*" element={<Errorpage/>} />
   {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}
   
-
+<Route path='/cart' element={<Cart/>}/>
 </Routes>
 <Footer/>
+<Toaster/>
 </BrowserRouter>
     </>
   )

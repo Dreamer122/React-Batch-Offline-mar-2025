@@ -3,10 +3,10 @@ import React,{useState,useRef, useEffect} from 'react'
 import { searchData } from '../util/helper';
 
 export const Searchbar = ({products,setFilterData}) => {
-  console.log("searchbar comp")
+  // console.log("searchbar comp")
     const [searchText,setSearchText]=useState("");
      const inputref= useRef(1)
-     console.log(inputref)
+    //  console.log(inputref)
      const pref=useRef(null)
 
      const setValue=()=>{

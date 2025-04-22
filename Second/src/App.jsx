@@ -47,7 +47,9 @@ function App() {
         (filterData?.length==0)?<Loader/>:
         filterData?.map((obj, i) => {
           // return <Link  key={obj.id} to={`/products/${obj.title.split(" ").join("-")}`}> <Section data={obj} /> </Link>;
-          return <Link className="h-96 w-[300px] shadow-xl mb-5 px-3 py-5 hover:-translate-y-1.5 transition  duration-200 ease-linear" style={{textDecoration:"none"}} key={obj.id} to={`/products/${obj.id}/${obj.title}`}> <Section data={obj} /> </Link>;
+          return <Section key={obj.id} data={obj} />
+             
+             
         })}
       </div>
 
