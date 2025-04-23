@@ -7,6 +7,7 @@ export const Cartcontext=createContext()
 
 const CartProvider=({children})=>{
     const [cart,setCart]=useState([])
+    const [auth,setAuth]=useState(false)
    function addCart(product){
     console.log("add cart function called")
     const exists=cart.find((item)=>item.id===product.id)
@@ -45,9 +46,20 @@ const CartProvider=({children})=>{
         return total
     }
 
+    // login
+    const login=()=>{
+        setAuth(true)
+        toast.success("login success")
+    }
+    const logout=()=>{
+        setAuth(false)
+        toast.success("logout success")
+    }
 
     return (
-        <Cartcontext.Provider value={{cart,addCart,removeItem,clearCart,increaseQty,decreaseQty,totalBill}}>
+        <Cartcontext.Provider value={{cart,addCart,removeItem,clearCart,increaseQty,decreaseQty,totalBill
+            ,login,logout,auth
+        }}>
 {children}
         </Cartcontext.Provider>
 

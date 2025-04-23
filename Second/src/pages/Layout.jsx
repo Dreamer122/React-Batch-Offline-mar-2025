@@ -12,6 +12,7 @@ import { ProductDesc } from './ProductDesc';
 import { titles } from '../Components/Data';
 import { useLocation } from 'react-router-dom';
 import { Cart } from './Cart';
+import { ProtectedRoute } from '../Components/ProtectedRoute';
 
 const About=lazy(()=>import("../pages/About"))
 import { SignupForm } from './SignupForm';
@@ -63,7 +64,7 @@ export const Layout = () => {
   <Route path="/*" element={<Errorpage/>} />
   {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}
   
-<Route path='/cart' element={<Cart/>}/>
+<Route path='/cart' element={<ProtectedRoute> <Cart/> </ProtectedRoute>}/>
 </Routes>
 <Footer/>
 <Toaster/>

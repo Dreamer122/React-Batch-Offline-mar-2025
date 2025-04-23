@@ -4,7 +4,7 @@ import useOnline from "../util/useOnline"
 import { useContext } from "react"
 import { Cartcontext } from "../util/context/Cartcontext"
 export function Header(){
-    const {cart}=useContext(Cartcontext)
+    const {cart,auth,logout}=useContext(Cartcontext)
     
    
     const navigate=useNavigate()
@@ -42,7 +42,8 @@ export function Header(){
         
         {/* <li> <button onClick={changename}>click me</button></li> */}
         {/* <li> <button onClick={()=>{setName("reactjs")}}>click me</button></li> */}
-        <li> <button onClick={loggedin}>click me</button></li>
+        {/* <li> <button onClick={loggedin}>click me</button></li> */}
+      {auth &&  <li> <button className="bg-purple-950 text-white px-3 py-2 rounded" onClick={logout}>logout</button></li>}
         <button onClick={()=>navigate(-1)}>prev</button>
         <button onClick={()=>navigate(1)}>next</button>
         <li>{online?"🟢":"🔴"}</li>

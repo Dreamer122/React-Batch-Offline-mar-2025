@@ -1,7 +1,10 @@
 import React from 'react'
 import {useForm} from "react-hook-form"
 import { DevTool } from '@hookform/devtools';
+import { useContext } from 'react';
+import { Cartcontext } from '../util/context/Cartcontext';
 export const Login = () => {
+  const {login}=useContext(Cartcontext)
   const form=useForm()
   // console.log(form)
   const {register,control,handleSubmit,formState}=form
@@ -9,6 +12,7 @@ export const Login = () => {
   const {errors}=formState;
  const submitForm=(data)=>{
   console.log(data)
+  login()
  }
 
   return (
