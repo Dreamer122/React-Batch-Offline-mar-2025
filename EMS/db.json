@@ -1,0 +1,64 @@
+{
+    "employess":[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "salary": 50000,
+    "designation": "Software Engineer",
+    "age": 30,
+    "joiningDate": "2020-01-15",
+    "department": "IT"
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "salary": 60000,
+    "designation": "Project Manager",
+    "age": 35,
+    "joiningDate": "2018-03-22",
+    "department": "Management"
+  },
+    {
+        "id": 3,
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "salary": 55000,
+        "designation": "Data Analyst",
+        "age": 28,
+        "joiningDate": "2019-07-10",
+        "department": "Data Science"
+    },
+    {
+        "id": 4,
+        "firstName": "Bob",
+        "lastName": "Brown",
+        "salary": 70000,
+        "designation": "DevOps Engineer",
+        "age": 32,
+        "joiningDate": "2021-05-18",
+        "department": "IT"
+    },
+    {
+        "id": 5,
+        "firstName": "Charlie",
+        "lastName": "Davis",
+        "salary": 80000,
+        "designation": "UX Designer",
+        "age": 29,
+        "joiningDate": "2022-02-25",
+        "department": "Design"
+    },
+    {
+        "id": 6,
+        "firstName": "David",
+        "lastName": "Wilson",
+        "salary": 75000,
+        "designation": "QA Engineer",
+        "age": 31,
+        "joiningDate": "2020-11-30",
+        "department": "Quality Assurance"
+    }
+]
+}
