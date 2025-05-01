@@ -1,24 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from "react-hook-form"
 import axios from 'axios'
-export const EmployeeForm = () => {
+import { useNavigate } from 'react-router'
+export const EmployeeForm = ({isEdit=false,defaultValue=null}) => {
     const {
         register,
         handleSubmit,
         reset,
        
         formState: { errors,isSubmitSuccessful },
-      } = useForm()
+      } = useForm({
+        defaultValues:defaultValue
+      })
+      const navigate=useNavigate()
     
-      const submitForm= async (event,data)=>{
-        event.preventDefault()
+      const submitForm= async (data)=>{
+        // event.preventDefault()
         console.log(data)
-        alert("Employee Added Successfully")
-        // post data to json server
-        const res=await axios.post("http://localhost:3000/employess",data)
-        console.log(res)
+        if(isEdit){
+          const res=await axios.put(`http://localhost:3000/employess/${defaultValue.id}`,data)
+          console.log(res)
+          alert("Employee Updated Successfully")
+       console.log("update")
+        navigate("/")
+        }
+        else{
+
+          // post data to json server
+          const res=await axios.post("http://localhost:3000/employess",data)
+          console.log(res)
+          alert("Employee Added Successfully")
         // reset form after submission
-        if(isSubmitSuccessful){
+        if(isSubmitSuccessful &&  !isEdit){
           reset({
             firstName:"",
             lastName:"",
@@ -31,10 +44,15 @@ export const EmployeeForm = () => {
             designation:""
           })
         }
+      }
+
         // reset form after submission
 
 
       }
+      useEffect(()=>{
+        reset(defaultValue)
+      },[defaultValue])
 
 
   return (

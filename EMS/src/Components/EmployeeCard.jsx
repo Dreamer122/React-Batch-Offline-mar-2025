@@ -1,6 +1,7 @@
 import React from 'react'
-
-export const EmployeeCard = ({emp}) => {
+import { Link } from 'react-router';
+import { View , UserPen, Trash2} from 'lucide-react';
+export const EmployeeCard = ({emp,deleteEmp}) => {
   return (
     <>
     <div>
@@ -9,9 +10,10 @@ export const EmployeeCard = ({emp}) => {
             <h2 className='text-xl font-semibold text-center'>Employee Name {emp.firstName} {emp.lastName}</h2>
             <p className='text-gray-500 text-center'>Department {emp.department}</p>
             <p className='text-gray-500 text-center'>Position {emp.designation}</p>
-            <button className='bg-blue-500 text-white rounded-md p-2 mt-3 w-full'>View Details</button>
-            <button className='bg-green-600 text-white rounded-md p-2 mt-3 w-full'>edit</button>
-            <button className='bg-red-600 text-white rounded-md p-2 mt-3 w-full'>delete</button>
+           <Link to={`/viewemployee/${emp.id}`}> <button className='bg-blue-500 text-white rounded-md p-2 mt-3 w-full flex items-center justify-center'>  <View className='mx-2'/>View Details</button></Link>
+          <Link to={`/updateemp/${emp.id}`}>  <button className='bg-green-600 text-white rounded-md p-2 mt-3 w-full flex items-center justify-center'>   <UserPen className='mx-2'/>edit</button> </Link>
+            <button className='bg-red-600 text-white rounded-md p-2 mt-3 w-full flex items-center justify-center'
+            onClick={()=>deleteEmp(emp.id)}>    <Trash2 className='mx-2'/>delete</button>
         </div>
     </div>
     </>

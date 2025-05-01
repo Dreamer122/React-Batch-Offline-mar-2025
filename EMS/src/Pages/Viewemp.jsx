@@ -1,23 +1,30 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, use } from 'react'
 import axios from 'axios';
 import { EmployeeCard } from '../Components/EmployeeCard';
 export const Viewemp = () => {
     const [empData, setEmpData] = useState([])
     const [department, setDepartment] = useState("")
     const [filteredData,setFilteredData]=useState([])
+    const [totalPage,setTotalPage]=useState(0)
 
+    const [page,setPage]=useState(1)
+  
 
     const getEmpData = async () => {
-      try{
-       const res=await axios.get("http://localhost:3000/employess")
-       console.log(res)
-       setEmpData(res.data)
-        setFilteredData(res.data)
-      }
-      catch(err){
-        console.log("Error while fetching data",err)
-      }
-    }
+          try{
+           const res=await axios.get(`http://localhost:3000/employess/?_page=${page}&_per_page=4`)
+           console.log(res)
+          //  let d= res.data
+          setEmpData(res.data.data)
+        setFilteredData(res.data.data)
+        setTotalPage(res.data.pages)
+           
+          }
+          catch(err){
+            console.log("Error while fetching data",err)
+          }
+        }
+
 
     // filter data through department
     const filterBydepartment=(e)=>{
@@ -34,9 +41,29 @@ export const Viewemp = () => {
 
     }
 
+    // delete employee
+    const deleteEmp=async(id)=>{
+      try{
+        const check=confirm("Are you sure you want to delete this employee?")
+        if(check){
+          const res=await axios.delete(`http://localhost:3000/employess/${id}`)
+          console.log(res)
+          alert("Employee deleted successfully")
+         let d= getEmpData()
+         setFilteredData(d)
+          setEmpData(d)
+        }
+      
+    }
+    catch(errr){
+      console.log("Error while deleting employee",errr)
+    }
+    }
+
     useEffect(() => {
-      getEmpData()
-}, [])
+     getEmpData()
+}, [page])
+
   return (
    <>
    <h2 className='text-4xl font-semibold ms-5'>All Employees</h2>
@@ -62,14 +89,20 @@ export const Viewemp = () => {
 
    <div className='flex flex-wrap justify-center'>
     {/* cards */}
-    {
-      filteredData?.map((emp,indx)=>{
+    { filteredData?.length>0?
+      filteredData?.map((emp)=>{
         return(
-          <EmployeeCard key={emp.id} emp={emp} />
+          <EmployeeCard key={emp.id} emp={emp}  deleteEmp={deleteEmp}/>
         )
       })
+      :<h2 className='text-4xl font-semibold'>No Employees Found</h2>
     }
    </div>
+    <div className='flex justify-center items-center'>
+      <button className='bg-blue-500 text-white rounded-md p-2 m-5 disabled:bg-blue-300'  disabled={page==1?true:false} onClick={()=>setPage(page-1)}>Previous</button>
+      <h3 className='text-blue-800'>{page}</h3>
+      <button className='bg-blue-500 text-white rounded-md p-2 m-5  disabled:bg-blue-300' disabled={page==totalPage?true:false} onClick={()=>setPage(page+1)}>Next</button>
+    </div>
    </>
   )
 }

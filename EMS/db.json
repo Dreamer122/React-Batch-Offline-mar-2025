@@ -1,66 +1,60 @@
 {
   "employess": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "salary": 50000,
-      "designation": "Software Engineer",
-      "age": 30,
-      "joiningDate": "2020-01-15",
-      "department": "IT",
-      "Dp": "https://api.dicebear.com/9.x/initials/svg?seed=John Doe"
-    },
-    {
-      "id": 2,
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "salary": 60000,
-      "designation": "Project Manager",
-      "age": 35,
-      "joiningDate": "2018-03-22",
-      "department": "Management",
-      "Dp": "https://api.dicebear.com/9.x/initials/svg?seed=Jane Smith"
-    },
-    {
-      "id": 3,
+      "id": "3",
       "firstName": "Alice",
       "lastName": "Johnson",
       "salary": 55000,
       "designation": "Data Analyst",
+      "email": "kavish@gmail.com",
+      "address": "abc ",
       "age": 28,
       "joiningDate": "2019-07-10",
-      "department": "Data Science"
+      "department": "Data Science",
+      "phone": "324567890",
+      "status": "active"
     },
     {
-      "id": 4,
+      "id": "4",
       "firstName": "Bob",
       "lastName": "Brown",
       "salary": 70000,
       "designation": "DevOps Engineer",
+      "email": "BobBrown@gmail.com",
+      "address": "abc ",
       "age": 32,
       "joiningDate": "2021-05-18",
-      "department": "IT"
+      "department": "IT",
+      "phone": "324567890",
+      "status": "active"
     },
     {
-      "id": 5,
+      "id": "5",
       "firstName": "Charlie",
       "lastName": "Davis",
       "salary": 80000,
       "designation": "UX Designer",
+      "email": "kavish@gmail.com",
+      "address": "abc ",
       "age": 29,
       "joiningDate": "2022-02-25",
-      "department": "Design"
+      "department": "Design",
+      "phone": "324567890",
+      "status": "active"
     },
     {
-      "id": 6,
+      "id": "6",
       "firstName": "David",
       "lastName": "Wilson",
       "salary": 75000,
       "designation": "QA Engineer",
+      "email": "kavish@gmail.com",
       "age": 31,
       "joiningDate": "2020-11-30",
-      "department": "Quality Assurance"
+      "department": "Quality Assurance",
+      "address": "abc ",
+      "phone": "324567890",
+      "status": "active"
     },
     {
       "id": "01bf",
@@ -72,7 +66,21 @@
       "address": "abc ",
       "joiningDate": "2025-02-11",
       "salary": "40000",
-      "designation": "accountant"
+      "designation": "accountant",
+      "status": "active"
+    },
+    {
+      "id": "ce96",
+      "firstName": "Gurpreet",
+      "lastName": "singh",
+      "department": "HR",
+      "email": "gurpreet@gmail.com",
+      "age": "23",
+      "phone": "234567890",
+      "address": "abc xyz sector",
+      "joiningDate": "2025-02-11",
+      "salary": "45000",
+      "designation": "HR executive"
     }
   ]
 }
