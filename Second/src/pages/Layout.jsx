@@ -11,11 +11,17 @@ import { Errorpage } from './Errorpage';
 import { ProductDesc } from './ProductDesc';
 import { titles } from '../Components/Data';
 import { useLocation } from 'react-router-dom';
+import { Cart } from './Cart';
+import { ProtectedRoute } from '../Components/ProtectedRoute';
 
 const About=lazy(()=>import("../pages/About"))
 import { SignupForm } from './SignupForm';
 import { Login } from './Login';
+<<<<<<< HEAD
 import {Cart} from "./Cart"
+=======
+import { Toaster } from 'react-hot-toast';
+>>>>>>> 1474a4b6e8c93a6be5e99d55934d4f8deb8575b4
 
 const DynamicTitles=()=>{
   const location=useLocation();
@@ -74,9 +80,10 @@ export const Layout = () => {
   <Route path="/*" element={<Errorpage/>} />
   {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}
   
-
+<Route path='/cart' element={<ProtectedRoute> <Cart/> </ProtectedRoute>}/>
 </Routes>
 <Footer/>
+<Toaster/>
 </BrowserRouter>
     </>
   )

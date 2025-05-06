@@ -47,7 +47,13 @@ function App({addCart}) {
         (filterData?.length==0)?<Loader/>:
         filterData?.map((obj, i) => {
           // return <Link  key={obj.id} to={`/products/${obj.title.split(" ").join("-")}`}> <Section data={obj} /> </Link>;
+<<<<<<< HEAD
           return  <Section key={obj.id} data={obj} addCart={addCart} />;
+=======
+          return <Section key={obj.id} data={obj} />
+             
+             
+>>>>>>> 1474a4b6e8c93a6be5e99d55934d4f8deb8575b4
         })}
       </div>
 

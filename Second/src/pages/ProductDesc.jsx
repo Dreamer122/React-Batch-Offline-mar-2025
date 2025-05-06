@@ -7,7 +7,7 @@ import useCallApi from '../util/useCallApi'
 export const ProductDesc = () => {
     const param=useParams()
 
-    console.log(param)
+    // console.log(param)
     const {id,title}=param
     // console.log(params.id)
     // call api with id 1

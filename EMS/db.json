@@ -1,0 +1,86 @@
+{
+  "employess": [
+    {
+      "id": "3",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "salary": 55000,
+      "designation": "Data Analyst",
+      "email": "kavish@gmail.com",
+      "address": "abc ",
+      "age": 28,
+      "joiningDate": "2019-07-10",
+      "department": "Data Science",
+      "phone": "324567890",
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "firstName": "Bob",
+      "lastName": "Brown",
+      "salary": 70000,
+      "designation": "DevOps Engineer",
+      "email": "BobBrown@gmail.com",
+      "address": "abc ",
+      "age": 32,
+      "joiningDate": "2021-05-18",
+      "department": "IT",
+      "phone": "324567890",
+      "status": "active"
+    },
+    {
+      "id": "5",
+      "firstName": "Charlie",
+      "lastName": "Davis",
+      "salary": 80000,
+      "designation": "UX Designer",
+      "email": "kavish@gmail.com",
+      "address": "abc ",
+      "age": 29,
+      "joiningDate": "2022-02-25",
+      "department": "Design",
+      "phone": "324567890",
+      "status": "active"
+    },
+    {
+      "id": "6",
+      "firstName": "David",
+      "lastName": "Wilson",
+      "salary": 75000,
+      "designation": "QA Engineer",
+      "email": "kavish@gmail.com",
+      "age": 31,
+      "joiningDate": "2020-11-30",
+      "department": "Quality Assurance",
+      "address": "abc ",
+      "phone": "324567890",
+      "status": "active"
+    },
+    {
+      "id": "01bf",
+      "firstName": "kavish",
+      "lastName": "singh",
+      "department": "Finance",
+      "email": "kavish@gmail.com",
+      "phone": "324567890",
+      "address": "abc ",
+      "joiningDate": "2025-02-11",
+      "salary": "40000",
+      "designation": "accountant",
+      "status": "active"
+    },
+    {
+      "id": "ce96",
+      "firstName": "Gurpreet",
+      "lastName": "singh",
+      "department": "HR",
+      "email": "gurpreet@gmail.com",
+      "age": "23",
+      "phone": "234567890",
+      "address": "abc xyz sector",
+      "joiningDate": "2025-02-11",
+      "salary": "45000",
+      "designation": "HR executive"
+    }
+  ]
+}
