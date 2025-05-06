@@ -1,4 +1,4 @@
-import React, {lazy,Suspense ,useEffect } from 'react'
+import React, {lazy,Suspense ,useEffect, useState } from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 // import  About  from "./About";
@@ -15,10 +15,11 @@ import { useLocation } from 'react-router-dom';
 const About=lazy(()=>import("../pages/About"))
 import { SignupForm } from './SignupForm';
 import { Login } from './Login';
+import {Cart} from "./Cart"
 
 const DynamicTitles=()=>{
   const location=useLocation();
-  console.log(location.pathname)
+  // console.log(location.pathname)
 
   useEffect(()=>{
     document.title=titles[location.pathname]
@@ -30,15 +31,26 @@ return null
 
 
 export const Layout = () => {
+  const [cart,setCart]=useState([])
+  function addToCart(product){
+    console.log("data added to cart")
+    setCart([...cart,product])
+  }
+
+  const removeProduct=(product)=>{
+    const data=cart.filter((item)=>item.id!=product.id)
+    setCart([...data])
+
+  }
 
   return (
     <>
     <BrowserRouter>
     <DynamicTitles/>
-    <Header />
+    <Header length={cart.length}/>
 
 <Routes>
-  <Route path="/" element={<App/>}></Route>
+  <Route path="/" element={<App addCart={addToCart}/>}></Route>
   
 
   <Route path="/about" element={<Suspense fallback={<h1>loading....</h1>}> <About/> </Suspense>}/>
@@ -57,6 +69,7 @@ export const Layout = () => {
 
 <Route path='/signup' element={<SignupForm/>}/>
 <Route path='/login' element={<Login/>}/>
+<Route path='/cart' element={<Cart cart={cart} removeProduct={removeProduct}/>}/>
 
   <Route path="/*" element={<Errorpage/>} />
   {/* <Route path="/*" element={<Navigate to={"/"}/>} /> */}

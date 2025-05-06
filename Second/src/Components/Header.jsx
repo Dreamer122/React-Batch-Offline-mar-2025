@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { NavLink ,Link,useNavigate} from "react-router-dom"
 import useOnline from "../util/useOnline"
-export function Header(){
+import { FaCartShopping } from "react-icons/fa6";
+export function Header({length}){
    
     const navigate=useNavigate()
             const [name,setName]= useState("react+vite")
@@ -34,6 +35,8 @@ export function Header(){
         <li> <NavLink to={"/blog"}>blogs</NavLink></li>
         <li> <NavLink to={"/signup"}>signup</NavLink></li>
         <li> <NavLink to={"/login"}>login</NavLink></li>
+        <li> <NavLink to={"/cart"} className="flex"><FaCartShopping /> <span>{length}</span></NavLink></li>
+
         
         {/* <li> <button onClick={changename}>click me</button></li> */}
         {/* <li> <button onClick={()=>{setName("reactjs")}}>click me</button></li> */}
