@@ -24,7 +24,7 @@ const getActiveUser=()=>{
 }
 const avgsalary=()=>{
   let avg=empData?.reduce((acc,emp)=> {
-    console.log() 
+    
    return acc+Number(emp.salary)
   },0)
   console.log(avg)
