@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { ID } from "appwrite";
-import { storage, databases } from "../../appwriteConfig"; // adjust path if needed
+import { storage, databases } from "./"; // adjust path if needed
 import { useNavigate } from "react-router-dom";
 
 const CreateBlog = () => {

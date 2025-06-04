@@ -1,17 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import { Menu, X } from "lucide-react"; // You can use any icon lib or SVGs
 
+import { account } from "../../Appwrite/Config";
 const Navbar = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const {isLoggedIn,user} = useSelector((state) => state.auth);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleLogout = () => {
-    dispatch(logout());
-  };
+  const navigate=useNavigate()
+  const handleLogout =async () => {
+    try{
+
+      await account.deleteSession("current")
+      localStorage.removeItem("user")
+       dispatch(logout());
+       navigate("/")
+       alert("logout successfully")
+      }
+      catch(error){
+        console.log(error)
+      }
+     };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -48,7 +61,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/dashboard" className="bg-cyan-600 px-4 py-2 rounded">Dashboard</Link>
+              <Link to="/dashboard/" className="bg-cyan-600 px-4 py-2 rounded">Dashboard</Link>
               <button onClick={handleLogout} className="bg-red-600 px-4 py-2 rounded">Logout</button>
             </>
           )}
@@ -71,7 +84,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/dashboard" onClick={toggleMenu} className="block bg-cyan-600 px-4 py-2 rounded">Dashboard</Link>
+                <Link to={`/dashboard/${user.userId}`} onClick={toggleMenu} className="block bg-cyan-600 px-4 py-2 rounded">Dashboard</Link>
                 <button onClick={() => { handleLogout(); toggleMenu(); }} className="w-full bg-red-600 px-4 py-2 rounded">Logout</button>
               </>
             )}
