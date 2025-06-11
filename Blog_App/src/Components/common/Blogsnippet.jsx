@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 function stripHtml(html) {
   const div = document.createElement("div");
   div.innerHTML = html;
-  return div.textContent || div.innerText || "";
+  return div.textHTML || div.innerText || "";
 }
 
 export const Blogsnippet = ({ content }) => {

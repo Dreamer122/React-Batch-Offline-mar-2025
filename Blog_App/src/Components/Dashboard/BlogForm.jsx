@@ -57,7 +57,7 @@ export const BlogForm = ({isEdit=false, defaultValue=null,loading=false, Onsubmi
     }, [thumbnail]);
 
     useEffect(()=>{
-        console.log("default value",defaultValue)
+        // console.log("default value",defaultValue)
         reset(defaultValue)
          if (defaultValue?.tags) {
         setTags(defaultValue.tags);

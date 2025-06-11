@@ -10,7 +10,6 @@ import { setUserInfo } from '../redux/Slices/userSlice';
 export const Dashboard = () => {
     const { user } = useSelector((state) => state.auth);
     const { userInfo } = useSelector((state) => state.user);
-    const [userData, setUserData] = useState();
     const dispatch=useDispatch()
 
     const getUserData = async () => {
@@ -20,7 +19,6 @@ export const Dashboard = () => {
                 import.meta.env.VITE_USER_COLLECTIONID,
                 [Query.equal("userId", user.userId)]
             );
-            setUserData(res.documents[0]);
             dispatch(setUserInfo(res.documents[0]))
 
 
@@ -46,7 +44,7 @@ export const Dashboard = () => {
                                 {userInfo?.profilePic? <img src={userInfo.profilePic} alt="profile" className='w-20 h-20 rounded-full' />:
                                 <div className="w-20 h-20 rounded-full bg-green-600 flex items-center justify-center">
                                     <span className="text-2xl font-bold text-white">
-                                        { userData?.name?.charAt(0).toUpperCase() || 'U'}
+                                        { userInfo?.name?.charAt(0).toUpperCase() || 'U'}
                                     </span>
                                 </div>
 }

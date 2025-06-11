@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilePenLine, Trash2, Calendar, Tag } from 'lucide-react';
+import { FilePenLine, Trash2, Calendar, Tag ,Eye} from 'lucide-react';
 import { Link, useParams } from 'react-router';
 import { Blogsnippet } from '../common/Blogsnippet';
 
@@ -59,6 +59,9 @@ export const UserPost = ({doc,deletePost}) => {
                 </div>
                 
                 <div className="flex gap-2 justify-end mt-6">
+                    <Link to={`/viewblogpost/${$id}`}>
+                    <Eye />
+                    </Link>
                     <Link 
                         to={`/dashboard/${id}/edit/${$id}`}
                         className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors duration-200 dark:bg-blue-900/50 dark:text-blue-300 dark:hover:bg-blue-900"

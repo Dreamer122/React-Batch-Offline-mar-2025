@@ -11,7 +11,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(false);
 
   const login = async (data) => {

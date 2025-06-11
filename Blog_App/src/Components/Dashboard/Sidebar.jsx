@@ -40,7 +40,7 @@ export const Sidebar = () => {
                 </ul>
             </nav>
 
-            <div className="mt-auto pt-8 border-t border-green-600/50 mt-8">
+            <div className="mt-auto pt-8 border-t border-green-600/50">
                 <div className="flex items-center gap-3 px-4 py-3">
                     <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center">
                         <span className="text-lg font-semibold text-white">

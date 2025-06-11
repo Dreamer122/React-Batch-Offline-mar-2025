@@ -18,13 +18,13 @@ export const Settings = () => {
   const navigate = useNavigate()
 
   const profile = watch('profilePic')
-
+// {0:file,1:}
   // Set preview image based on selected file or existing image
   useEffect(() => {
     const profilePreview = () => {
-      const selectedFile = profile[0];
+      const selectedFile = profile?.[0];
 
-      if (selectedFile instanceof Blob) {
+      if (selectedFile instanceof File) {
         const fileReader = new FileReader()
         fileReader.onloadend = () => {
           setProfilepic(fileReader.result)
@@ -46,10 +46,11 @@ export const Settings = () => {
   // Handle profile update
   const UpdateProfile = async (data, e) => {
     e.preventDefault()
+    const toastId=toast.loading("updating profile...")
     try {
       let profileurl = ''
-
-      if (data.profilePic && data.profilePic[0]) {
+console.log(data.profilePic)
+      if (data.profilePic && data.profilePic[0] instanceof File) {
         const response = await storage.createFile(
           import.meta.env.VITE_BUCKETID,
           ID.unique(),
@@ -59,6 +60,7 @@ export const Settings = () => {
           import.meta.env.VITE_BUCKETID,
           response.$id
         )
+        console.log("inside if profile")
       }
 
       const res = await databases.updateDocument(
@@ -71,13 +73,19 @@ export const Settings = () => {
           profilePic: profileurl || userInfo.profilePic
         }
       )
-
+console.log("res",res)
       dispatch(setUserInfo(res))
-      toast.success('Profile updated successfully')
+      toast.success('Profile updated successfully',{
+        id:toastId
+      })
       navigate(`/dashboard/${id}`)
     } catch (error) {
       console.error('Error updating profile:', error)
-      toast.error(error.message)
+      toast.error(error.message,{
+        
+        id:toastId
+      }
+      )
     }
   }
 

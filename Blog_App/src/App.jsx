@@ -11,6 +11,7 @@ import { Allposts } from "./Components/Dashboard/Allposts"
 import {CreateBlog} from "./Components/Dashboard/CreateBlog"
 import {Settings} from "./Components/Dashboard/Settings"
 import { Editblog } from "./Components/Dashboard/Editblog"
+import { BlogView } from "./Pages/BlogView"
 
 function App(){
   return(<>
@@ -28,6 +29,7 @@ function App(){
     <Route path="edit/:blogid" element={<Editblog/>}/>
 
     </Route>
+    <Route path="/viewblogpost/:id" element={<BlogView/>}/>
     </Route>
   </Routes>
   </BrowserRouter>

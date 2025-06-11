@@ -5,34 +5,22 @@ import {Query} from "appwrite"
 import { UserPost } from './UserPost'
 import { setAllPost } from '../../redux/Slices/postSlice'
 import toast from "react-hot-toast"
-
+import { getAllPost } from '../../utils/Allpost'
 export const Allposts = () => {
   const {user}=useSelector((state)=>state.auth)
-  const [alldocs,setAllDocs]=useState([])
+  // const [alldocs,setAllDocs]=useState([])
+  const {allUserPost}=useSelector((state)=>state.posts)
   const [loading,setLoading]=useState(false)
   const dispatch=useDispatch()
 
-  const getAllPost=async()=>{
-    try{
-      setLoading(true)
-      const documents=await databases.listDocuments(
-        import.meta.env.VITE_DATABASEID,
-        import.meta.env.VITE_POST_COLLECTIONID,
-        [
-          Query.equal("userId",user.userId)
-        ]
-      )
-      setAllDocs(documents.documents)
-      dispatch(setAllPost(documents.documents))
-      console.log(documents)
-
-    }
-    catch(error){
-      console.log("error occured while fetching documents",error)
-    }
-    finally{
+  const getpostdata=async()=>{
+    setLoading(true)
+    
+  const data=await getAllPost(user.userId)
+      // setAllDocs(documents.documents)
+      dispatch(setAllPost(data))
       setLoading(false)
-    }
+    
   }
 
   // delete post 
@@ -48,7 +36,7 @@ export const Allposts = () => {
 
       )
       console.log("after deleting",res)
-      getAllPost()
+       getAllPost()
       toast.success("post deleted successfully")
 
     }catch(error){
@@ -59,7 +47,7 @@ export const Allposts = () => {
 
   }
 useEffect(()=>{
-  getAllPost()
+  getpostdata()
 },[])
 
 if(loading){
@@ -73,8 +61,8 @@ if(loading){
   <>
   <div className="flex flex-wrap">
   {
-    alldocs.length==0?"no docs found":
-    alldocs?.map((doc,index)=>{
+    allUserPost.length==0?"no docs found":
+    allUserPost?.map((doc,index)=>{
       return(
 <UserPost key={doc.$id} doc={doc} deletePost={deletePost} />
     )
